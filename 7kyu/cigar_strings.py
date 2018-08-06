@@ -69,3 +69,12 @@ def is_matched(s):
     A=''.join((' ',x)[x.isdigit()]for x in a).split()
     return'Invalid cigar'if sum(map(int,A))!=len(b)else(int(a.split('M')[0])if'M'in a else 0)==len(b)
 """
+
+
+"""
+import re
+
+def is_matched(read):
+    nums = [int(v) for v in re.findall(r'\d+', read[0])]
+    return 'Invalid cigar' if sum(nums)!=len(read[1]) else read[0]==f'{len(read[1])}M'
+"""
