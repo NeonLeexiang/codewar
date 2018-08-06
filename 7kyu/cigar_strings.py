@@ -61,3 +61,11 @@ def is_matched(read):
     elif 'M' not in s or int(match) < len(base) and len(base) != int(match):
         return(False)
 """
+
+
+"""
+def is_matched(s):
+    a,b=s
+    A=''.join((' ',x)[x.isdigit()]for x in a).split()
+    return'Invalid cigar'if sum(map(int,A))!=len(b)else(int(a.split('M')[0])if'M'in a else 0)==len(b)
+"""
